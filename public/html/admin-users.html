@@ -1,0 +1,117 @@
+<!-- admin-users.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add your CSS links and styles here -->
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <!-- Your admin-users.html content goes here -->
+    <header>
+        <h1>User List</h1>
+    </header>
+    <nav>
+        <!-- Add navigation links specific to the admin module if needed -->
+        <ul>
+            
+            <li><a href="../html/admin-users.html">Users</a></li>
+           <li> <a href="/a">Blogs</a>
+           </li>
+           <li><a href="../html/send-mail.html">Send mail</a></li>
+            <li><button style="margin-left: 100px;" onclick="location.href='/logout'">Logout</button></li>
+           
+
+            <!-- Add more admin-specific links as needed -->
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Create a container for displaying user data -->
+        <div class="admin-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Action</th> <!-- Add this column for Delete button -->
+                        <!-- Add more columns if needed -->
+                    </tr>
+                </thead>
+                <tbody id="user-list">
+                    <!-- User data will be displayed here using JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <!-- Include necessary scripts and stylesheets -->
+    <script>
+        
+
+// Function to fetch and render the user list
+async function fetchAndRenderUsers() {
+    try {
+        const response = await fetch('/admin/users');
+        const users = await response.json();
+        const userList = document.getElementById('user-list');
+
+        // Clear any existing user data
+        userList.innerHTML = '';
+
+        // Loop through the users and add them to the table
+        users.forEach((user) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+    <td>${user.name}</td>
+    <td>${user.email}</td>
+    <td>${user.phno}</td>
+    <td>
+        <button class="delete-button" data-userId="${user._id}">Delete</button>
+    </td>
+`;
+            userList.appendChild(row);
+        });
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+// Call the fetchAndRenderUsers function when the admin-users.html page loads
+window.addEventListener('load', fetchAndRenderUsers);
+
+// Function to delete a user by ID
+async function deleteUser(userId) {
+    try {
+        const response = await fetch(`/admin/users/${userId}`, {
+            method: 'DELETE',
+        });
+
+        if (response.ok) {
+            // User deleted successfully, refresh the user list
+            fetchAndRenderUsers();
+        } else {
+            console.error('Failed to delete user');
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+// Attach a click event listener to the user table to handle delete button clicks
+document.getElementById('user-list').addEventListener('click', async (event) => {
+    if (event.target.classList.contains('delete-button')) {
+        const userId = event.target.getAttribute('data-userId'); // Use getAttribute to retrieve the data-userId
+        console.log(userId); // Add this line for debugging
+
+        if (userId) {
+            await deleteUser(userId);
+        } else {
+            console.error('User ID is undefined');
+        }
+    }
+});
+
+
+    </script>
+</body>
+</html>

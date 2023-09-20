@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Blog Posts</title>
+    <script>
+        // JavaScript for the five-star rating system
+document.addEventListener("DOMContentLoaded", () => {
+    const ratingInputs = document.querySelectorAll(".rating input");
+    ratingInputs.forEach((input) => {
+        input.addEventListener("change", (e) => {
+            const selectedRating = e.target.value;
+            // You can send this selectedRating to your server for storage or processing.
+            console.log(`Selected Rating: ${selectedRating}`);
+        });
+    });
+});
+
+    </script>
+    <style>
+        /* CSS for the card view */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.card {
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 14px;
+    margin: 0;
+}
+
+
+/* CSS for the star rating system */
+.rating {
+    display: inline-flex; /* Use flexbox to arrange elements horizontally */
+    flex-direction: row-reverse; /* Reverse the direction to make stars go from left to right */
+    align-items: center; /* Center stars vertically */
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s; /* Add a transition for smooth color change */
+}
+
+.rating label:hover,
+.rating input:checked ~ label {
+    color: #ffcc00; /* Change the color on hover or when checked */
+}
+
+/* Glowing effect animation */
+@keyframes glow {
+    0%, 100% {
+        color: #ccc; /* Start and end with the default color */
+        text-shadow: none; /* No shadow at the beginning and end */
+    }
+    50% {
+        color: #ffcc00; /* Glow at 50% of the animation */
+        text-shadow: 0 0 5px rgba(255, 204, 0, 0.8); /* Add a shadow for the glow effect */
+    }
+}
+
+
+
+
+    </style>
+    <style>nav {
+        background-color: #460938;              /* #b9a847;*/
+        color: rgba(131, 106, 106, 0.432);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px;
+        border-radius: 0px; /* Smoothen the border radius */
+      }
+      
+      /* Style for the navigation links */
+      ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+      
+      li {
+        margin-right: 20px;
+      }
+      
+      /* Style for the links */
+      a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        padding: 8px 16px; /* Increase padding for buttons */
+        border-radius: 5px; /* Smoothen the border radius for buttons */
+        transition: background-color 0.3s ease; /* Add a smooth transition */
+      }
+      
+      /* Style for the home button */
+      .home-button {
+        margin-right: auto;
+      }
+      
+      /* Hover effect */
+      a:hover {
+        background-color: #555; /* Change background color on hover */
+      }
+      
+      /* Add Blog button style */
+      .add-blog-button {
+        margin-left: 20px;
+      }
+      
+      
+      /* Add this CSS for styling the place widgets */
+      .places-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0 -10px; /* Add negative margin to compensate for spacing */
+      }
+      
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      
+      .place-widget {
+        
+        max-width: calc(33.33% - 20px); /* Adjust width for responsive design (3 columns) and spacing */
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20px; /* Add space between widgets */
+        background-color: #f5f5f5;
+        text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        flex-basis: calc(50% - 20px); /* Set the width to 50% and adjust for spacing */
+        margin-left: 10%;
+        margin-right:5% ; /* Add spacing between widgets */
+        
+      }
+      
+      .place-widget:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      }
+      
+      .place-widget a {
+        text-decoration: none;
+        color: #333;
+      }
+      
+      .place-widget h3 {
+        margin-top: 0;
+      }
+      
+      .place-widget img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+      
+      .place-widget p {
+        margin-top: 10px;
+        font-size: 14px;
+      }
+      </style>
+    <!-- Add your CSS styles for the card view here -->
+</head>
+<body>
+    <nav>
+        <div class="home-button">
+            <a href="/html/home.html">Home</a>
+        </div>
+        <ul>
+          
+            <li><button onclick="history.back()">back</button></li>
+            <li><a href="#">About</a></li>
+           
+        </ul>
+    </nav>
+    <h1>All Blog Posts</h1>
+    <div class="card-container">
+        <% blogPosts.forEach(post => { %>
+            <div class="card">
+                <img src="/uploads/<%= post.image %>" alt="<%= post.title %>">
+                <h2><%= post.title %></h2>
+                <p><%= post.description %></p>
+    
+                <div class="rating">
+                    <input type="radio" id="star1-<%= post._id %>" name="rating-<%= post._id %>" value="1">
+                    <label for="star1-<%= post._id %>">&#9733;</label>
+                    <input type="radio" id="star2-<%= post._id %>" name="rating-<%= post._id %>" value="2">
+                    <label for="star2-<%= post._id %>">&#9733;</label>
+                    <input type="radio" id="star3-<%= post._id %>" name="rating-<%= post._id %>" value="3">
+                    <label for="star3-<%= post._id %>">&#9733;</label>
+                    <input type="radio" id="star4-<%= post._id %>" name="rating-<%= post._id %>" value="4">
+                    <label for="star4-<%= post._id %>">&#9733;</label>
+                    <input type="radio" id="star5-<%= post._id %>" name="rating-<%= post._id %>" value="5">
+                    <label for="star5-<%= post._id %>">&#9733;</label>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+    

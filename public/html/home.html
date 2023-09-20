@@ -1,0 +1,184 @@
+<html>
+    <head>
+      <link rel="stylesheet" href="/css/home.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/all.min.css"> <!-- fontawesome -->
+    <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/tooplate-antique-cafe.css">
+    
+
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        
+    </head>
+    <body>
+      <nav>
+        <div class="home-button">
+            <a href="#">Home</a>
+        </div>
+        <ul>
+          <!--  <li><a href="#">Memories</a></li>
+            
+            <li><a href="#">Photography</a></li>-->
+            
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">contact</a></li>
+            <li><a href="../html/admin-login.html" id="admin-button">Admin</a></li>
+        </ul>
+    </nav>
+        
+        <div class="bgimg">
+        <img  class="im" src="/d.jpg" alt="background image" style="height: 100%; width: 1500px;">
+        
+          
+        <div class="form-container">
+          <div class="rectangle-section">
+            <h2>Welcome to Journal </h2><br>
+           
+            <!-- Add any other content you want in the section -->
+           <!-- Add this link/button in your HTML -->
+<a   class= "exp" href="/all-blogs"  >EXPLORE</a>
+
+          </div>
+            <!-- Signup Form -->
+            <form class="form" id="signup-form" method="post" action="/signup">
+                <h2>Sign Up</h2>
+                <input type="text" class="box" id="name" name="name" placeholder="Name" required />
+                <br>
+                <input type="text" class="box" id="email" name="email" placeholder="Email" required />
+                <br>
+                <input type="text" class="box" id="phno" name="phno" placeholder="Mobile" required />
+                <br>
+                <input type="text" class="box" id="password" name="password" placeholder="Password" required />
+                <br>
+                <input type="submit" value="Submit" id="submit" />
+                
+                
+            </form>
+
+            <!-- Login Form -->
+            <form class="form" id="login-form" method="post" action="/login">
+                <h2>Login</h2>
+                <input type="email" name="username" placeholder="Email" id="username" required>
+                
+                </label>
+                <input type="password" name="password" placeholder="Password" id="password" required>
+                <input type="submit" value="Login">
+                <!-- Add this HTML code inside the form-container div -->
+
+            </form>
+            <form class="form" id="subscribe-form" method="post" action="/subscribe">
+              <h2>Subscribe to Email Updates</h2>
+              <input type="email" class="box" id="subscribe-email" name="email" placeholder="Enter your email" required />
+              <input type="submit" value="Subscribe" id="subscribe-submit" />
+          </form>
+            
+
+        </div>
+        </div>
+        </div>
+        <div style="background-image: url(/b.jpg);" id="about" class="parallax-window" data-parallax="scroll" data-image-src="img/antique-cafe-bg-03.jpg">
+          
+          
+          <div  class="container mx-auto tm-container py-24 sm:py-48">
+            
+              <div class="tm-item-container sm:ml-auto sm:mr-12 mx-auto sm:px-0 px-4" >
+                
+                  <div class="bg-white bg-opacity-80 p-12 pb-14 rounded-xl mb-5">
+                      <h2 class="mb-6 tm-text-green text-4xl font-medium">About our journal</h2>
+                      <p class="mb-6 text-base leading-8">
+                        Journal" is a platform where travel enthusiasts can vicariously experience the joys and challenges of traveling to different corners of the globe. It offers a blend of personal storytelling, practical advice, and cultural insights, making it a valuable resource for anyone with a case of wanderlust..
+                    </p>
+                      <p class="text-base leading-8">
+                          If you wish to <a rel="nofollow" href="#contact" target="_parent">support us</a>, Another way is to tell your friends about journal website. Thank you. </p>
+                  </div>
+                  <a href="#contact" class="inline-block tm-bg-green transition text-white text-xl pt-3 pb-4 px-8 rounded-md">
+                      <i class="far fa-comments mr-4"></i>
+                      Contact
+                  </a>
+              </div>           
+          </div>        
+      </div>
+        <div style="background-image: url(/c.jpg);"id="contact" class="parallax-window relative" data-parallax="scroll" data-image-src="img/antique-cafe-bg-04.jpg">
+          <div class="container mx-auto tm-container pt-24 pb-48 sm:py-48">
+              <div class="flex flex-col lg:flex-row justify-around items-center lg:items-stretch">
+                  <div class="flex-1 rounded-xl px-10 py-12 m-5 bg-white bg-opacity-80 tm-item-container">
+                      <h2 class="text-3xl mb-6 tm-text-green">Contact Us</h2>
+                      <p class="mb-6 text-lg leading-8">
+                          Praesent tellus magna, consectetur sit amet volutpat eu, pulvinar vitae sem.
+                          Sed ultrices. bg white 80% alpha. btn #066    
+                      </p>
+                      <p class="mb-10 text-lg">
+                          <span class="block mb-2">Tel: <a href="tel:0100200340" class="hover:text-yellow-600 transition">010-020-0340</a></span>
+                          <span class="block">Email: <a href="mailto:info@company.com" class="hover:text-yellow-600 transition">info@company.com</a></span>                        
+                      </p>
+                      <div class="text-center">
+                          <a href="https://maps.app.goo.gl/ncCEhDH7znuHCBHs5" class="inline-block text-white text-2xl pl-10 pr-12 py-6 rounded-lg transition tm-bg-green">
+                              <i class="fas fa-map-marked-alt mr-8"></i>
+                              Open Maps
+                          </a>
+                      </div>                    
+                  </div>
+                  <div class="flex-1 rounded-xl p-12 pb-14 m-5 bg-black bg-opacity-50 tm-item-container">
+                      <form action="" method="POST" class="text-lg">
+                          <input type="text" name="name" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Name" required="" />
+                          <input type="email" name="email" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Email" required="" />
+                          <textarea rows="6" name="message" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Message..." required=""></textarea>
+                          <div class="text-right">
+                              <button type="submit" class="text-white hover:text-yellow-500 transition">Send it</button>
+                          </div>                        
+                        </form>
+                  </div>
+              </div>
+              
+          </div>        
+      </div>    
+
+       <div class="footer">
+          <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+           
+            
+  
+            <div class="col-xs-6 col-md-3">
+             
+                
+              </ul>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+              <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by 
+           <a href="#">JOURNAL</a>.
+              </p>
+            </div>
+  
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <ul class="social-icons">
+                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+              </ul>
+            </div>
+          </div>
+        </div>
+
+  </footer>
+
+
+
+
+
+
+
+      </div>
+    </body>
+</html>

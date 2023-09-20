@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Mail</title>
+    <link rel="stylesheet" href="../css/send-mail.css">
+   
+</head>
+<body>
+    <nav>
+        <!-- Add navigation links specific to the admin module if needed -->
+        <ul>
+            
+            <li><a href="../html/admin-users.html">Users</a></li>
+           <li>  <li> <a href="/a">Blogs</a></li>
+           <!-- Add this button to the navigation bar -->
+            <li><a href="../html/send-mail.html">Send mail</a></li>
+
+            <li><button style="margin-left: 100px;" onclick="location.href='/logout'">Logout</button></li>
+           
+
+            <!-- Add more admin-specific links as needed -->
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div id="subscribed-emails" class="subscribed-emails">
+            <!-- Subscribed emails will be displayed here -->
+        </div>
+        <!-- Add your send mail form here -->
+        <div class="send-mail-form-container">
+            <h1>Send Mail to Subscribers</h1>
+            <form id="send-mail-form" method="post" action="/send-email">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required><br><br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+                <input type="submit" value="Send">
+            </form>
+        </div>
+    </div>
+
+     <!-- Add any additional content or scripts as needed -->
+     <script>
+        // Use JavaScript to fetch and display subscribed emails
+        async function fetchSubscribedEmails() {
+            try {
+                // Fetch subscribed emails from your server
+                const response = await fetch('/fetch-subscribed-emails');
+                const data = await response.json();
+    
+                if (data && data.emails) {
+                    const subscribedEmailsList = document.getElementById('subscribed-emails');
+    
+                    // Clear the existing list
+                    subscribedEmailsList.innerHTML = '';
+    
+                    // Add each subscribed email and remove button to the list
+                    data.emails.forEach((email) => {
+                        const listItem = document.createElement('div');
+                        listItem.classList.add('subscribed-email');
+    
+                        const emailText = document.createElement('span');
+                        emailText.textContent = email;
+    
+                        const removeButton = document.createElement('button');
+                        removeButton.textContent = 'Remove';
+                        removeButton.classList.add('remove-button'); // Add the remove button class
+                        removeButton.addEventListener('click', () => {
+                            // Call a function to remove the email from the database
+                            removeEmail(email);
+                        });
+    
+                        listItem.appendChild(emailText);
+                        listItem.appendChild(removeButton);
+                        subscribedEmailsList.appendChild(listItem);
+                    });
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    
+        // Function to remove an email from the database
+        async function removeEmail(email) {
+            try {
+                // Send a request to your server to remove the email
+                const response = await fetch('/remove-subscribed-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email }),
+                });
+    
+                if (response.ok) {
+                    // Email removed successfully, fetch and display updated list
+                    fetchSubscribedEmails();
+                } else {
+                    console.error('Failed to remove email');
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    
+        // Call the function to fetch and display subscribed emails when the page loads
+        fetchSubscribedEmails();
+    </script>
+    
+</body>
+</html>

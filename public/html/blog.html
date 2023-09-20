@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Magazine</title>
+    <link rel="stylesheet" href="/css/blog.css">
+    <!-- Include this script in your HTML file -->
+    <script>
+        function hideEditForm(postId) {
+            document.getElementById(`editForm-${postId}`).style.display = 'none';
+        }
+        // Check if the user is authenticated
+ // Add this line
+
+    </script>
+    <script>
+        function openEditForm(postId) {
+            document.getElementById(`editForm-${postId}`).style.display = 'block';
+        }
+
+        async function saveChanges(postId) {
+        const title = document.getElementById(`title-${postId}`).value;
+        const description = document.getElementById(`description-${postId}`).value;
+
+        try {
+            const response = await fetch(`/edit-blog/${postId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ title, description }),
+            });
+
+            if (response.ok) {
+                window.location.reload(); // Reload the page
+            } else {
+                // Handle errors
+                console.error('Failed to update the blog post');
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+        async function fetchAndRenderBlogs() {
+            try {
+                const response = await fetch('/get-blogs');
+                const blogPosts = await response.json();
+                const container = document.querySelector('.content');
+
+                blogPosts.forEach((post) => {
+                    const blogCard = document.createElement('div');
+                    blogCard.classList.add('blog-card');
+                    blogCard.innerHTML = `
+                        <img src="/uploads/${post.image}" alt="Blog Image">
+                        <h3>${post.title}</h3>
+                        <p>${post.description}</p>
+                        <a href="#">Read More</a>
+                        <button onclick="openEditForm('${post._id}')">Edit</button>
+                        <a href="/delete-blog/${post._id}">Delete</a>
+                        <form id="editForm-${post._id}" style="display: none;">
+                            <label for="title">Title</label>
+                            <input type="text" id="title-${post._id}" name="title" value="${post.title}">
+                            <label for="description">Description</label>
+                            <textarea id="description-${post._id}" name="description">${post.description}</textarea>
+                            <button type="button" onclick="saveChanges('${post._id}')">Save Changes</button>
+                            <button type="button" onclick="hideEditForm('${post._id}')">Hide</button>
+                        </form>
+                    `;
+
+                    container.appendChild(blogCard);
+                });
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        window.addEventListener('load', fetchAndRenderBlogs);
+    </script>
+    
+</head>
+<nav class="navbar">
+    <div class="home-button">
+        <a href="home.html">Home</a>
+    </div>
+    <ul>
+       
+       <li><a   href="/all-blogs" >EXPLORE</a></li>
+        <li><a href="travel.html">Travels</a></li>
+        <li><a href="photography.html">Photography</a></li>
+        
+        <li><button onclick="location.href='/logout'">Logout</button></li>
+    </ul>
+</nav>
+<body>
+    <div class="sidebar">
+        <h2>Blog Actions</h2>
+        <button  class="action-button" ><a href="/html/add-blog.html"> Add Blog</a></button>
+        
+    </div>
+    <div class="content">
+</div>     
+        
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/travel-view.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="home-button">
+            <a href="home.html">Home</a>
+        </div>
+        <ul id="ab">
+            
+            
+            <li><a href="travel.html">Travels</a></li>
+            <li><a href="photography.html">Photography</a></li>
+            
+            <li><button onclick="location.href='/logout'">Logout</button></li>
+        </ul>
+    </nav>
+    <!-- Left Section: Information about the place -->
+    <div class="left-section">
+        <!-- Content for the selected widget will be displayed here -->
+        <div id="content-container">
+            <!-- JavaScript will dynamically load content here -->
+        </div>
+    </div>
+    <!-- Right Section: Map API -->
+    <div class="right-section">
+        <!-- Location section using an embedded map -->
+        <div class="location-section">
+            <h3>Location</h3>
+            <div id="map"></div> <!-- This is where the map will be displayed -->
+        </div>
+    </div>
+    <!-- Comments Section -->
+    <div class="comments-section">
+        <h3>Comments</h3>
+        <ul id="comments-list">
+            <!-- Comments will be displayed here -->
+        </ul>
+        <form id="comment-form">
+            <label for="comment">Add a Comment:</label>
+            <input type="text" id="comment" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="../js/travel-view.js"></script>
+</body>
+</html>

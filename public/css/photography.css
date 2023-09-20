@@ -1,0 +1,120 @@
+/*PHOTO DIARIES*/
+
+body {
+  background-color: #979797;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Style for the navigation bar */
+nav {
+  background-size: cover;
+  background-color: #460938;              /* #b9a847;*/
+  color: rgb(253, 251, 251);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  border-radius: 0px; /* Smoothen the border radius */
+}
+
+/* Style for the navigation links */
+ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-right: 20px;
+}
+
+/* Style for the links */
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 8px 16px; /* Increase padding for buttons */
+  border-radius: 5px; /* Smoothen the border radius for buttons */
+  transition: background-color 0.3s ease; /* Add a smooth transition */
+}
+
+/* Style for the home button */
+.home-button {
+  margin-right: auto;
+}
+
+/* Hover effect */
+a:hover {
+  background-color: #555; /* Change background color on hover */
+}
+div.gallery {
+  margin: 80px;
+  border: 5px solid white;
+  float: left;
+  width: 330px;
+  background-color: white;
+}
+
+div.gallery:hover {
+  border: 5px solid white;
+}
+
+div.gallery img {
+  width: 100%;
+  height: 250px; /* height of image */
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+  font-family: 'Caveat Brush', cursive;
+  background-color: #29B6F6;
+  font-weight: bold;
+}
+
+#box11 {
+  height: 250px;
+  width: 100%;
+  background-image: url("p.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  display: table;
+}
+
+h1.para1 {
+  font-family: Comic Sans MS;
+  font-size: 50px;
+  color: white;
+  margin: 0px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#more33 {
+  display: none;
+}
+
+.btn-container33 {
+  margin: auto;
+  height: 44px;
+  width: 166.23px;
+}
+
+button.myBtn033 {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+  border: none;
+  padding: 5px;
+  font-size: 20px;
+  background: #ff0000;
+  color: #05004e;
+  border-color: #ff0000;
+  font-family: cursive;
+  box-sizing: border-box;
+}

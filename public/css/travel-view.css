@@ -1,0 +1,301 @@
+/* Reset some default styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(88, 92, 99, 0.075);
+}
+
+/* Style for the navigation bar */
+nav {
+    background-color: #460938;              /* #b9a847;*/
+    color: rgba(131, 106, 106, 0.432);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    border-radius: 0px; /* Smoothen the border radius */
+  }
+  
+  /* Style for the navigation links */
+  #33 {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin-right: 20px;
+  }
+  
+  /* Style for the links */
+  a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px; /* Increase padding for buttons */
+    border-radius: 5px; /* Smoothen the border radius for buttons */
+    transition: background-color 0.3s ease; /* Add a smooth transition */
+  }
+  
+  /* Style for the home button */
+  .home-button {
+    margin-right: auto;
+  }
+  
+  /* Hover effect */
+  a:hover {
+    background-color: #555; /* Change background color on hover */
+  }
+  
+  /* Add Blog button style */
+  .add-blog-button {
+    margin-left: 20px;
+  }
+  
+  
+  /* Add this CSS for styling the place widgets */
+  .places-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -10px; /* Add negative margin to compensate for spacing */
+  }
+  #ab {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-right: 20px;
+}
+
+/* Style for the links */
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px; /* Increase padding for buttons */
+    border-radius: 5px; /* Smoothen the border radius for buttons */
+    transition: background-color 0.3s ease; /* Add a smooth transition */
+}
+
+/* Style for the home button */
+.home-button {
+    margin-right: auto;
+}
+
+/* Hover effect */
+a:hover {
+    background-color: #555; /* Change background color on hover */
+}
+
+/* Add Blog button style */
+.add-blog-button {
+    margin-left: 20px;
+}
+
+
+/* Add this CSS for styling the place widgets */
+.places-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -10px; /* Add negative margin to compensate for spacing */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.place-widget {
+    
+    max-width: calc(33.33% - 20px); /* Adjust width for responsive design (3 columns) and spacing */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px; /* Add space between widgets */
+    background-color: #f5f5f5;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    flex-basis: calc(50% - 20px); /* Set the width to 50% and adjust for spacing */
+    margin-left: 10%;
+    margin-right:5% ; /* Add spacing between widgets */
+    
+}
+
+.place-widget:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.place-widget a {
+    text-decoration: none;
+    color: #333;
+}
+
+.place-widget h3 {
+    margin-top: 0;
+}
+
+.place-widget img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.place-widget p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+/* Rest of your CSS styles for the navigation bar and other elements */
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .place-widget {
+    
+    max-width: calc(33.33% - 20px); /* Adjust width for responsive design (3 columns) and spacing */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px; /* Add space between widgets */
+    background-color: #f5f5f5;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    flex-basis: calc(50% - 20px); /* Set the width to 50% and adjust for spacing */
+    margin-left: 10%;
+    margin-right:5% ; /* Add spacing between widgets */
+    
+  }
+  
+  .place-widget:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .place-widget a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .place-widget h3 {
+    margin-top: 0;
+  }
+  
+  .place-widget img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .place-widget p {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+/* Add Blog button style */
+.add-blog-button {
+    margin-left: 20px;
+}
+
+/* Style for the container holding left and right sections */
+.container {
+    display: flex; /* Make the container flex to arrange sections side by side */
+    justify-content: space-between; /* Space the sections evenly */
+    padding: 20px;
+}
+
+/* Style for the left section */
+.left-section {
+    flex: 1; /* Let the left section grow to take available space */
+    padding: 20px;
+}
+
+/* Style for the right section */
+.right-section {
+    width: 300px; /* Set a fixed width for the right section */
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+/* Style for the comments section */
+.comments-section {
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Change the layout to a vertical column */
+}
+
+/* Style for the comments heading */
+.comments-section h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Style for the comments list */
+#comments-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style for individual comments in the list */
+#comments-list li {
+  padding: 10px 0;
+  font-size: 16px;
+  color: #555;
+  display: block; /* Display comments as block elements */
+  clear: both; /* Add this to ensure each comment starts on a new line */
+}
+
+
+/* Style for the comment input field */
+#comment {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Style for the comment submit button */
+#comment-form button {
+    background-color: #b9a847;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Hover effect for the comment submit button */
+#comment-form button:hover {
+    background-color: #555;
+}
+#ab{
+    
+        list-style: none;
+        
+        margin: 0;
+        padding: 0;
+    
+}
