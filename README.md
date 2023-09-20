@@ -20,6 +20,8 @@ step 4  go to the index.js page and click on run than start debugging when termi
 step 5  open any browser and type localhost:3000 and press enter 
 
 ------------------------------------
+TO ACCESS THE ADMIN MODULE
+
 To manually add an admin user to your MongoDB Atlas cluster, you can follow these steps using MongoDB Compass, which is a graphical user interface for MongoDB:
 
 1. **Access MongoDB Atlas:**
